@@ -37,7 +37,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+			//deleteFavorite: () => {
+			//	setFavorites(
+			//		favorites.filter(elm => elm.index != favorite.id))
+			//}
 		}
 	};
 };
