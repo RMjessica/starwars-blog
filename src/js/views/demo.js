@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
-import { Card } from "../component/Card";
+import { Card } from "../component/Card.jsx";
 
 import { FaHome } from "react-icons/fa";
 

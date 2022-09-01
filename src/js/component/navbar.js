@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 
 export const Navbar = () => {
+
+	const { store, actions } = useContext(Context);
+
+	const handleDelete = (element) => {
+    actions.deleteFavorite(element);
+  };
+
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
@@ -16,14 +24,14 @@ export const Navbar = () => {
 						My Favorites
 					</button>
 					<ul className="dropdown-menu dropdown-menu-end me-3" aria-labelledby="dropdownMenuButton1">
+						{store.favorites.map((element, index) => {
 						<li>
 							<a className="dropdown-item" href="#">Fav1</a>
-							{/* <button onClick={deleteFavorite} className="trash-btn">
-							<FaTrashAlt />
-        			</button> */}
-							</li>
-						<li><a className="dropdown-item" href="#">Fav2</a></li>
-						<li><a className="dropdown-item" href="#">Fav3</a></li>
+							<button onClick={handleDelete} className="">
+								<FaTrashAlt />
+        			</button>
+						</li>
+						})}
 						<hr className="m-1"></hr>
 						<Link to="/favs" className="text-decoration-none">
 								<li><button className="dropdown-item" href="#">Go to favorites <FaHeart /></button></li>

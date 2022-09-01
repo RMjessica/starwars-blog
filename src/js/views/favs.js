@@ -1,7 +1,7 @@
 // this will be my list of favorites whole page view
 import React from "react";
 import "../../styles/home.css";
-import { Card } from '../component/Card'
+import { Card } from "../component/Card.jsx"
 
 
 
