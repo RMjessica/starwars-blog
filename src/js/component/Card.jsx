@@ -9,7 +9,11 @@ export const Card = ({ name, gender, hair_color, eye_color, url, index }) => {
   const { store, actions } = useContext(Context);
 
   const handleFavorite = () => {
-    actions.addFavorite({ name , url, type: 'characters', index: index});
+    //actions.addFavorite({ name , url, type: 'characters', index: index});
+    for (let data_type of ["people", "vehicles", "starships", "planets"]){
+      actions.getData(data_type)
+    }
+    
   };
 
   return (
@@ -28,7 +32,7 @@ export const Card = ({ name, gender, hair_color, eye_color, url, index }) => {
               Learn more!
 			    	</button>
 			    </Link>
-          <a href="#" className="btn btn-outline-dark btn-sm" onClick={() => handleFavorite()}><FaHeart /></a>
+          <a className="btn btn-outline-dark btn-sm" onClick={() => handleFavorite()}><FaHeart /></a>
         </div>
       </div>
     </div>

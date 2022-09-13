@@ -26,7 +26,7 @@ export const Navbar = () => {
 					<ul className="dropdown-menu dropdown-menu-end me-3" aria-labelledby="dropdownMenuButton1">
 						{store.favorites.map((element, index) => {
 						<li>
-							<a className="dropdown-item" href="#">Fav1</a>
+							<a className="dropdown-item">Fav1</a>
 							<button onClick={handleDelete} className="">
 								<FaTrashAlt />
         			</button>
@@ -34,7 +34,7 @@ export const Navbar = () => {
 						})}
 						<hr className="m-1"></hr>
 						<Link to="/favs" className="text-decoration-none">
-								<li><button className="dropdown-item" href="#">Go to favorites <FaHeart /></button></li>
+								<li><button className="dropdown-item">Go to favorites <FaHeart /></button></li>
 						</Link>
 					</ul>
 			</div>
