@@ -2,8 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			results: {
-				planets: [],
 				people: [],
+				planets: [],
 				starships: [],
 				vehicles: [],
 			},
@@ -45,11 +45,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 							...result
 						}
 					})
-
 					localStorage.setItem("results", JSON.stringify(getStore().results));
 	
 				} catch (error) {
-          console.log("Error loading message from /api/people", error);
+          console.log(`Error loading message from https://swapi.dev/api/${data_type}/`, error);
         }
 
 			},
