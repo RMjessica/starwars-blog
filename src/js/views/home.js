@@ -6,7 +6,6 @@ import "../../styles/home.css";
 export const Home = () => {
 
   const { store, actions } = useContext(Context);
-
   const data_types = Object.keys(store.results);
 
   useEffect(() => {

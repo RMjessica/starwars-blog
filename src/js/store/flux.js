@@ -54,19 +54,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addFavorite:(element) => {
 				const store = getStore();
-				const response = store.favorites.filter((favoriteName) => {
-					return favoriteName.name === element.name;
+				const response = store.favorites.filter((favorite_name) => {
+					return favorite_name.name === element.name;
 				});
 
 				if(response.length <= 0 ){
 					const newState = store;
 					newState.favorites.push(element);
-					
-					setStore(
-						newState
-					);
-	
-					localStorage.setItem('store', JSON.stringify(store));
+
+					setStore(newState);
+					localStorage.setItem("store", JSON.stringify(store));
 				}
 
 			},
@@ -75,10 +72,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const elementIndex = store.favorites.indexOf(element.name);
 				store.favorites.splice(elementIndex, 1);
 
-				setStore(
-					store
-				);
-				
+				setStore(store);
 				localStorage.setItem('store', JSON.stringify(store));
 			}
 		}

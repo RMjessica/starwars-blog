@@ -33,7 +33,7 @@ export const Card = ({ index, data, data_type }) => {
               alt="pic" 
         />
         <div className="card-body">
-          <h5 className="card-title">{data.name}</h5>
+          <h5 className="card-title">{(data.name)}</h5>
           
           {attributes[data_type].map((item) => (
             <p key={uuidv4()} className="card-text">{cleanTitle(item)}: {data[item]}</p>
@@ -44,7 +44,7 @@ export const Card = ({ index, data, data_type }) => {
               Learn more!
 			    	</button>
 			    </Link>
-          <a className="btn btn-outline-dark btn-sm" onClick={() => handleFavorite()}><FaHeart /></a>
+          <button className="btn btn-outline-dark btn-sm" onClick={() => handleFavorite()}><FaHeart /></button>
         </div>
       </div>
     </>
