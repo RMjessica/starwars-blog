@@ -15,7 +15,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="text-center mt-5">
+    <div className="text-center mt-3">
       {data_types.map((data_type) => (
         <Carousel data_type={data_type} />
       ))}

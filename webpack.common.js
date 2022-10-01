@@ -21,9 +21,9 @@ module.exports = {
         },
         {
           test: /\.(css)$/, use: [{
-              loader: "style-loader" // creates style nodes from JS strings
+              loader: "style-loader"
           }, {
-              loader: "css-loader" // translates CSS into CommonJS
+              loader: "css-loader"
           }]
         },
         {
@@ -31,8 +31,8 @@ module.exports = {
             loader: 'file-loader',
             options: { name: '[name].[ext]' }
           }
-        }, //for images
-        { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, use: ['file-loader'] } //for fonts
+        },
+        { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, use: ['file-loader'] }
     ]
   },
   resolve: {

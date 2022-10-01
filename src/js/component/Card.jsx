@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import nopic  from "./../../img/nopic.png"
+import "../../styles/card.css";
 import { cleanTitle, checkFileExist } from "../utils.js"
 import { v4 as uuidv4 } from 'uuid';
 
@@ -26,12 +27,13 @@ export const Card = ({ index, data, data_type }) => {
   
   return (
     <>
-      <div className="card m-3" style={{width: "22rem"}}>
-      
-        <img  src={checkFileExist(img_url) ? img_url : nopic} 
-              className="card-img-top img-fluid" 
-              alt="pic" 
-        />
+      <div className="card my-2 mx-3">
+        <div className="img-handler">
+          <img  src={checkFileExist(img_url) ? img_url : nopic} 
+                className="card-img-top img-fluid" 
+                alt="pic" 
+          />
+        </div>
         <div className="card-body">
           <h5 className="card-title">{(data.name)}</h5>
           
