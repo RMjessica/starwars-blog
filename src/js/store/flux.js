@@ -52,11 +52,19 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
 
 			},
-			addFavorite:(element) => {
-				const store = getStore();
-				const response = store.favorites.filter((favorite_name) => {
-					return favorite_name.name === element.name;
-				});
+			handleFavorites:(data_type, index) => {
+				//getStore().results[data_type][id]
+				if (!
+					getStore().favoritos.lenght > 0 &&
+					favoritos.includes(data_type, index)) {
+						setStore({favorites: [...getStore().favorites, [data_type, index]]})
+				} else {
+						favorites.push(data_type, index)
+					}
+
+		
+	
+	/* 
 
 				if(response.length <= 0 ){
 					const newState = store;
@@ -65,16 +73,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore(newState);
 					localStorage.setItem("store", JSON.stringify(store));
 				}
-
-			},
-			deleteFavorite:(element) => {
-				const store = getStore();
-				const elementIndex = store.favorites.indexOf(element.name);
-				store.favorites.splice(elementIndex, 1);
-
-				setStore(store);
-				localStorage.setItem('store', JSON.stringify(store));
-			}
+*/
+			}, 
 		}
 	}
 }

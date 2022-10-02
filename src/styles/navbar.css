@@ -1,3 +1,12 @@
-/* .logo {
-  color: rgb(196, 181, 52);
-} */
+.btn-outline-warning {
+  color: rgb(214, 201, 63);
+}
+
+.btn-outline-warning:hover, .btn-outline-warning:focus, .btn-outline-warning:active, .btn-outline-warning.active, .open>.dropdown-toggle.btn-outline-warning, .btn-outline-warning:active {
+  background-color: rgb(214, 201, 63) !important ;
+  color: rgb(34, 31, 31);
+}
+
+.navbar-collapse {
+  flex-grow: 0;
+}

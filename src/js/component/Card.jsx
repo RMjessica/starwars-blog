@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Context } from "../store/appContext";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -12,6 +12,10 @@ export const Card = ({ index, data, data_type }) => {
 
   const { store, actions } = useContext(Context);
 
+  const toFavorite = () => {
+    actions.handleFavorites(data_type, index)
+  }
+
   const img_url = `https://starwars-visualguide.com/assets/img/${data_type === "people" ? "characters" : data_type}/${index + 1}.jpg`;
 
   const attributes = {
@@ -20,17 +24,13 @@ export const Card = ({ index, data, data_type }) => {
     starships: ["manufacturer", "passengers", "cargo_capacity"],
     vehicles: ["manufacturer", "passengers", "cargo_capacity"]
   }
-
-  const handleFavorite = () => {
-    return
-  }
   
   return (
     <>
       <div className="card my-2 mx-3">
         <div className="img-handler">
           <img  src={checkFileExist(img_url) ? img_url : nopic} 
-                className="card-img-top img-fluid" 
+                className="card-img-top img-fluid m-0" 
                 alt="pic" 
           />
         </div>
@@ -42,11 +42,11 @@ export const Card = ({ index, data, data_type }) => {
           ))}
 
           <Link to="/detail">
-			    	<button className="btn btn-outline-dark btn-sm me-3">
+			    	<button className="btn btn-outline-dark btn-sm me-3" style={{color: "rgb(214, 201, 63)", borderColor: "rgb(214, 201, 63)"}}>
               Learn more!
 			    	</button>
 			    </Link>
-          <button className="btn btn-outline-dark btn-sm" onClick={() => handleFavorite()}><FaHeart /></button>
+          <button className="btn btn-outline-dark btn-sm" style={{color: "rgb(214, 201, 63)", borderColor: "rgb(214, 201, 63)"}} onClick={() => toFavorite()}><FaHeart /></button>
         </div>
       </div>
     </>

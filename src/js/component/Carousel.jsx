@@ -9,7 +9,7 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 export const Carousel = ({data_type}) => {
   const {store, actions} = useContext(Context);
-  const [sliderRef, setSliderRef] = useState(null)
+  /* const [sliderRef, setSliderRef] = useState(null); */
   
   const sliderSettings = {
     dots: true,
@@ -34,8 +34,8 @@ export const Carousel = ({data_type}) => {
   };
   return (
     <>
-        <div className="container my-3">
-          <h1 className="p-3 text-start text-warning">{cleanTitle(data_type)}</h1>
+        <div className="container my-3 fw-light">
+          <h1 className="p-3 text-start" style={{color: "rgb(214, 201, 63)"}} >{cleanTitle(data_type)}</h1>
           {/* <button onCLick={sliderRef?.slickPrev}>
             <FaChevronLeft />
           </button>
@@ -43,7 +43,7 @@ export const Carousel = ({data_type}) => {
             <FaChevronRight />
           </button> */}
           <ul>
-          <Slider ref={setSliderRef} {...sliderSettings}>
+          <Slider /* ref={setSliderRef} */ {...sliderSettings}>
               {store.results[data_type].map((item, index) => {
                 return (
                   <li key={uuidv4()} className="list-unstyled">
