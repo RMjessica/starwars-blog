@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import { cleanTitle } from "../utils.js"
 import Slider from "react-slick";
 import { v4 as uuidv4 } from 'uuid';
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+/* import { FaChevronRight, FaChevronLeft } from "react-icons/fa"; */
 
 
 export const Carousel = ({data_type}) => {

@@ -4,9 +4,9 @@ import ScrollToTop from "./component/scrollToTop";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import { Home } from "./views/home";
-import { Detail } from "./views/detail";
-import { Favs } from "./views/favs";
+import { Home } from "./views/home.jsx";
+import { Detail } from "./views/detail.jsx";
+import { Favs } from "./views/favs.jsx";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -24,7 +24,7 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/detail/:id">
+						<Route exact path="/detail">
 							<Detail />
 						</Route>
 						<Route exact path="/favs">

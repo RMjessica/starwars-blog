@@ -59,7 +59,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 			handleFavorites:(data_type, index) => {
-					let favorite = {...getStore().favorites}
+				let favorite = {...getStore().favorites}
 
 				if (favorite[data_type].includes(index)) {
 					favorite[data_type] = favorite[data_type].filter((e) => e !== index)

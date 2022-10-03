@@ -12,10 +12,6 @@ export const Card = ({ index, data, data_type }) => {
 
   const { store, actions } = useContext(Context);
 
-  const toFavorite = () => {
-    actions.handleFavorites(data_type, index)
-  }
-
   const img_url = `https://starwars-visualguide.com/assets/img/${data_type === "people" ? "characters" : data_type}/${index + 1}.jpg`;
 
   const attributes = {
@@ -24,6 +20,13 @@ export const Card = ({ index, data, data_type }) => {
     starships: ["manufacturer", "passengers", "cargo_capacity"],
     vehicles: ["manufacturer", "passengers", "cargo_capacity"]
   }
+
+  const toFavorite = () => {
+    actions.handleFavorites(data_type, index)
+  }
+  
+  const isNotFavorite = {color: "rgb(214, 201, 63)", borderColor: "rgb(214, 201, 63)"}
+  const isFavorite = {color: "rgb(231, 50, 50)", borderColor: "rgb(214, 201, 63)"}
   
   return (
     <>
@@ -46,7 +49,7 @@ export const Card = ({ index, data, data_type }) => {
               Learn more!
 			    	</button>
 			    </Link>
-          <button className="btn btn-outline-dark btn-sm" style={{color: "rgb(214, 201, 63)", borderColor: "rgb(214, 201, 63)"}} onClick={() => toFavorite()}><FaHeart /></button>
+          <button className="btn btn-outline-dark btn-sm" style={store.favorites[data_type].includes(index) ? isFavorite : isNotFavorite} onClick={() => toFavorite()}><FaHeart /></button>
         </div>
       </div>
     </>

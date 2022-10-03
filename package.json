@@ -1,5 +1,5 @@
 {
-	"name": "react-hello-webapp",
+	"name": "Star Wars Blog",
 	"engines": {
 		"node": "16.x"
 	},
@@ -12,8 +12,8 @@
 		"deploy": "node deploy-to-github.js"
 	},
 	"author": {
-		"name": "Alejandro Sanchez",
-		"url": "http://alesanchezr.com/"
+		"name": "Jessica Rojas Mosquera",
+		"url": "https://github.com/RMjessica"
 	},
 	"contributors": [
 		{

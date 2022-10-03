@@ -1,9 +1,14 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Amiko&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,300;1,400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,300;1,400&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,300&display=swap');
 
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 body {
   /* background-image: radial-gradient(circle, #ccc75a, #aea850, #908b47, #736e3d, #575333, #45462e, #353929, #282c23, #212821, #1c231f, #181e1d, #151919); */
   background-image: radial-gradient(circle, #938f33, #827e34, #726d34, #615d34, #514d33, #444431, #393b2e, #2f312b, #272b27, #202522, #1a1f1e, #151919);
   color: rgb(204, 192, 58);
+  margin: 0;
 }
 
