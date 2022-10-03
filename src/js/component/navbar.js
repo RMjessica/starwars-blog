@@ -29,14 +29,14 @@ export const Navbar = () => {
 						My Favorites
 					</button>
 					<ul className="dropdown-menu dropdown-menu-end me-3" aria-labelledby="dropdownMenuButton1">
-						{store.favorites.map((fav, index) => {
+						{/* {store.favorites.map((fav, index) => {
 						<li>
 							<a className="dropdown-item">Fav1</a>
 							<button onClick={handleDelete} className="">
 								<FaTrashAlt />
         			</button>
 						</li>
-						})}
+						})} */}
 						<li><hr className="m-1 dropdown-divider"></hr></li>
 						<Link to="/favs" className="text-decoration-none">
 								<li><button className="dropdown-item">Go to favorites <FaHeart /></button></li>

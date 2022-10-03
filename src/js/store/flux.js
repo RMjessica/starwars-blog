@@ -7,7 +7,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				starships: [],
 				vehicles: [],
 			},
-			favorites: [],
+			favorites: {
+				people: [],
+				planets: [],
+				starships: [],
+				vehicles: [],
+			},
 		},
 		actions: {
 			getData: async (data_type) => {
@@ -17,6 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				if (local_results !== null && local_results[data_type].length > 0) {
 					console.log(`The data type ${data_type} is already in local storage`)
+					
 					let result = {}
 					result[data_type] = [...local_results[data_type]]
 					setStore({
@@ -25,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							...result
 						}
 					})
-					return
+					return;
 				} 
 
 				const baseURL = `https://swapi.dev/api/${data_type}/`;
@@ -53,28 +59,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 			handleFavorites:(data_type, index) => {
-				//getStore().results[data_type][id]
-				if (!
-					getStore().favoritos.lenght > 0 &&
-					favoritos.includes(data_type, index)) {
-						setStore({favorites: [...getStore().favorites, [data_type, index]]})
+					let favorite = {...getStore().favorites}
+
+				if (favorite[data_type].includes(index)) {
+					favorite[data_type] = favorite[data_type].filter((e) => e !== index)
 				} else {
-						favorites.push(data_type, index)
-					}
-
-		
-	
-	/* 
-
-				if(response.length <= 0 ){
-					const newState = store;
-					newState.favorites.push(element);
-
-					setStore(newState);
-					localStorage.setItem("store", JSON.stringify(store));
+					favorite[data_type] = [...favorite[data_type], index]
 				}
-*/
-			}, 
+				setStore({favorites: favorite})	
+			}
 		}
 	}
 }
