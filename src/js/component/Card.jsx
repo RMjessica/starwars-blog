@@ -30,7 +30,7 @@ export const Card = ({ index, data, data_type }) => {
   
   return (
     <>
-      <div className="card my-2 mx-3">
+      <div className="card my-2 mx-3" style={{width: "23rem"}}>
         <div className="img-handler">
           <img  src={checkFileExist(img_url) ? img_url : nopic} 
                 className="card-img-top img-fluid m-0" 
@@ -38,7 +38,7 @@ export const Card = ({ index, data, data_type }) => {
           />
         </div>
         <div className="card-body">
-          <h5 className="card-title">{(data.name)}</h5>
+          <h5 className="card-title fw-bold">{(data.name)}</h5>
           
           {attributes[data_type].map((item) => (
             <p key={uuidv4()} className="card-text">{cleanTitle(item)}: {data[item]}</p>

@@ -6,8 +6,12 @@ export const Footer = () => (
 		
 		<p>
 			Made with <AiOutlineHeart /> by  
-			<a className="font-monospace mx-1 fw-light fst-italic" style={{color: "rgb(214, 201, 63)"}} href="https://github.com/RMjessica">Jeess</a>
+			<a href="https://github.com/RMjessica" className="font-monospace mx-1 fw-light fst-italic" target="blank" style={{color: "rgb(214, 201, 63)"}}>
+				Jeess
+			</a>
 		</p>
-		<p><a className="text-dark" href="https://www.starwars.com/">StarWars Oficial Site</a></p>
+		<p>
+			<a href="https://www.starwars.com/" target="blank" style={{color: "rgb(214, 201, 63)"}}>StarWars Oficial Site</a>
+		</p>
 	</footer>
 );

@@ -30,33 +30,36 @@ const CardDetail = ({ index, data, data_type }) => {
   
   return (
     <>
-     <div className="card mb-3" >
+     <div className="card">
         <div className="row g-0">
 
-          <div className="col-md-4">
+          <div className="col-4">
             <img 
               src={checkFileExist(img_url) ? img_url : nopic} 
-              className="img-fluid rounded-start" 
+              className="img-fluid p-4" 
               alt="Pic"/>
           </div>
 
-          <div className="col-md-8">
+          <div className="col-8">
             <div className="card-body">
-              <h5 className="card-title">{(data.name)}</h5>
+              <div className="d-flex justify-content-center">
+                <h1 className="card-title fw-bold mt-3 mb-4">{(data.name)}</h1>
+                <button className="btn btn-outline-dark btn-sm border-0 ms-4" style={store.favorites[data_type].includes(index) ? isFavorite : isNotFavorite} onClick={() => toFavorite()}><FaHeart /></button>
+
+              </div>
 
               {attributes[data_type].map((item) => (
                 <p key={uuidv4()} className="card-text">{cleanTitle(item)}: {data[item]}</p>
               ))}
               
             </div>
+            
+            <hr className="my-4 mx-4" />
+
+            <p className="card-text">("But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.")</p>
+    
           </div>  
         </div>
-
-        <hr className="my-4 mx-5" />
-
-        <p className="card-text">("But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.")</p>
-        <p className="card-text mb-3"><small className="text-muted">Last updated 3 mins ago</small></p>
-        <button className="btn btn-outline-dark btn-sm" style={store.favorites[data_type].includes(index) ? isFavorite : isNotFavorite} onClick={() => toFavorite()}><FaHeart /></button>
       </div>
     </>
   )

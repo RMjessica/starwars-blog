@@ -13,6 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				starships: [],
 				vehicles: [],
 			},
+			hasFavorites: false
 		},
 		actions: {
 			getData: async (data_type) => {
@@ -59,15 +60,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 			handleFavorites:(data_type, index) => {
-				let favorite = {...getStore().favorites}
+				const favorite = {...getStore().favorites};
 
 				if (favorite[data_type].includes(index)) {
 					favorite[data_type] = favorite[data_type].filter((e) => e !== index)
 				} else {
 					favorite[data_type] = [...favorite[data_type], index]
-				}
-				setStore({favorites: favorite})	
-			}
+				};
+
+				setStore({
+					favorites: favorite,
+					hasFavorites: Object.keys(favorite).some((i) => favorite[i].length)
+				});
+				
+				localStorage.setItem("favorites", JSON.stringify(getStore().favorites));
+			},
+			deleteFavorite: (data_type, index) => {
+				const favorite = {...getStore().favorites};
+
+				if (favorite[data_type].includes(index)) {
+					favorite[data_type] = favorite[data_type].filter((e) => e !== index)
+					return console.log(favorite[data_type]);
+				}}
+
+				/* const store = getStore();
+				let newFav = store.favorites.filter((elementfav, index) => {
+						if (i !== index) return elementfav;
+				});
+				setStore({
+						favorites: newFav
+				});
+				setStore({
+						classboton: "btn-outline-warning"
+				}) */
 		}
 	}
 }
