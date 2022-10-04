@@ -21,7 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				const local_results = JSON.parse(localStorage.getItem("results"));
 
-				if (local_results !== null && local_results[data_type].length > 0) {
+				if (local_results !== null && local_results[data_type].length) {
 					console.log(`The data type ${data_type} is already in local storage`)
 					
 					let result = {}
@@ -60,7 +60,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 			handleFavorites:(data_type, index) => {
-				const favorite = {...getStore().favorites};
+				let favorite = {...getStore().favorites};
 
 				if (favorite[data_type].includes(index)) {
 					favorite[data_type] = favorite[data_type].filter((e) => e !== index)
@@ -75,24 +75,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 				localStorage.setItem("favorites", JSON.stringify(getStore().favorites));
 			},
-			deleteFavorite: (data_type, index) => {
-				const favorite = {...getStore().favorites};
+			deleteFavorite:(data_type, index) => {
+				let favorite = {...getStore().favorites};
 
 				if (favorite[data_type].includes(index)) {
 					favorite[data_type] = favorite[data_type].filter((e) => e !== index)
-					return console.log(favorite[data_type]);
-				}}
+				};
 
-				/* const store = getStore();
-				let newFav = store.favorites.filter((elementfav, index) => {
-						if (i !== index) return elementfav;
-				});
 				setStore({
-						favorites: newFav
+					favorites: favorite,
+					hasFavorites: Object.keys(favorite).some((i) => favorite[i].length)
 				});
-				setStore({
-						classboton: "btn-outline-warning"
-				}) */
+
+				localStorage.setItem("favorites", JSON.stringify(getStore().favorites));
+			}
 		}
 	}
 }

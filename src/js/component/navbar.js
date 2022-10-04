@@ -11,6 +11,10 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	const data_types = Object.keys(store.favorites);
 
+	const deleteFavorite = (data_type, index) => {
+    actions.deleteFavorite(data_type, index)
+  }
+
 
 	return (
 		<nav className="navbar navbar-expand-lg m-0 p-3 d-flex justify-content-between">
@@ -40,7 +44,7 @@ export const Navbar = () => {
 											{store.results[data_type][index].name}
 										</Link>
 										<button className="btn">
-											<FaTrashAlt size={15} title="Delete" style={{color: "rgb(214, 201, 63)"}} className="mb-2" onClick={actions.deleteFavorite}/>
+											<FaTrashAlt size={15} title="Delete" style={{color: "rgb(214, 201, 63)"}} className="mb-2" onClick={() => deleteFavorite(data_type, index)}/>
 										</button>
 									</li>
 								)
