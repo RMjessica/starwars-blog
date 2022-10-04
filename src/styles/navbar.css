@@ -15,12 +15,13 @@
   display: none !important;
 }
 
-
+/* 
 .dropdown:hover .dropdown-menu {
-  display: block !important;
   margin-top: 0 !important;
 }
+ */
 
+ 
 /* button glow removal when clicked*/
  .btn:focus,.btn:active {
   outline: none !important;
@@ -30,3 +31,15 @@
 .dropdown-menu-dark {
   background-color:rgb(34, 31, 31) !important;
 }
+
+@media (min-width: 768px) { 
+  .dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0; 
+   }
+  }
+  @media (max-width: 767px) { 
+  .dropdown:hover .dropdown-menu {
+      display: none;
+      margin-top: auto;
+  }}
