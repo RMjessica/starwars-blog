@@ -44,7 +44,7 @@ export const Card = ({ index, data, data_type }) => {
             <p key={uuidv4()} className="card-text">{cleanTitle(item)}: {data[item]}</p>
           ))}
 
-          <Link to="/detail">
+          <Link to={`/${data_type}/${index}`}>
 			    	<button className="btn btn-outline-dark btn-sm me-3" style={{color: "rgb(214, 201, 63)", borderColor: "rgb(214, 201, 63)"}}>
               Learn more!
 			    	</button>

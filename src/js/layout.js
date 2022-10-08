@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { Home } from "./views/home.jsx";
 import { Detail } from "./views/detail.jsx";
-import { Favs } from "./views/favs.jsx";
+import { Favorites } from "./views/favorites.jsx";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -24,11 +24,11 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/detail">
+						<Route exact path="/:data_type/:id">
 							<Detail />
 						</Route>
-						<Route exact path="/favs">
-							<Favs />
+						<Route exact path="/favorites">
+							<Favorites />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

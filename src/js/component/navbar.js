@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { FaTrashAlt, FaGripLines } from "react-icons/fa";
@@ -47,8 +47,7 @@ export const Navbar = () => {
 							<Link 	
 								to="/favorites" 
 								/* title="Click to go to favorites" */
-								className="nav-link dropdown-toggle" 
-								role="button" 
+								className="nav-link dropdown-toggle btn" 
 								data-bs-hover="dropdown" 
 								aria-expanded="false" 
 								style={{color: "rgb(214, 201, 63)"}}
