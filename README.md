@@ -1,5 +1,9 @@
 # Star Wars Blog
 
+
+https://user-images.githubusercontent.com/88908436/194767730-081b8b33-02a2-4abd-8d19-5762e0c7198a.mp4
+
+
 ### Requirements:
 - Make sure you are using node version 10
 
