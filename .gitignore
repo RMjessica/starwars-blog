@@ -59,6 +59,4 @@ public/
 !.gitpod.yml
 !.htaccess
 !.eslintrc
-!.env.example
 .now
-.vercel
